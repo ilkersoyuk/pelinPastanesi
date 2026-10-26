@@ -1,0 +1,34 @@
+/* Telefon öncelikli iletişim: üst menü, ilk ekran ve mobil sabit arama çubuğu. */
+.header-phone{background:var(--wine);color:var(--paper);border-color:var(--wine);gap:13px;padding:11px 18px}
+.header-phone:hover{background:#51232b}
+.header-phone svg,.hero-call svg,.mobile-call svg{width:24px;height:24px;flex-shrink:0}
+.header-phone .header-phone-copy{display:flex;flex-direction:column;gap:3px;font-size:16px;line-height:1.2}
+.header-phone-copy>span{font-size:8px!important;letter-spacing:1.4px}
+.header-phone-copy strong{font-size:17px;font-weight:500;letter-spacing:.5px}
+.hero-actions{display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+.hero-call{gap:34px;padding:15px 22px;min-height:74px}
+.hero-call .hero-call-copy{display:flex;flex-direction:column;gap:8px;line-height:1.2;font-size:25px}
+.hero-call-copy>span{font-size:8px!important;letter-spacing:1.5px}
+.hero-call-copy strong{font-size:26px;font-weight:500;letter-spacing:.5px}
+.hero-explore{font-size:12px;display:flex;gap:14px;align-items:center;min-height:44px;border-bottom:1px solid var(--line)}
+.hero-explore:hover{color:var(--wine);border-color:var(--wine)}
+.hero-explore span{font-size:22px}
+.hero-opening{font-size:10px;color:var(--muted);margin-top:13px}
+.mobile-call{display:none}
+@media(max-width:1100px) and (min-width:761px){.hero-actions{gap:12px}.hero-call{gap:22px;padding-inline:17px}.hero-call-copy strong{font-size:23px}.hero-explore{font-size:11px}.hero-bottom{padding-top:23px}}
+@media(max-width:760px){
+ body{padding-bottom:calc(79px + env(safe-area-inset-bottom,0px))}
+ .header-phone{display:none}
+ .hero-actions{gap:22px}
+ .hero-call{gap:24px;min-height:73px}
+ .hero-call-copy strong{font-size:25px}
+ .hero-explore{font-size:11px;gap:10px}
+ .hero-opening{font-size:9px}
+ .mobile-call{position:fixed;bottom:0;left:0;right:0;z-index:30;background:var(--wine);color:#fffaf0;display:flex;align-items:center;gap:12px;padding:16px 22px calc(16px + env(safe-area-inset-bottom,0px));box-shadow:0 -4px 20px #332c2517;min-height:76px}
+ .mobile-call>span{display:flex;flex-direction:column;gap:4px;line-height:1.2}
+ .mobile-call strong{font-weight:500;font-size:13px}
+ .mobile-call>span>span{font-size:8px;opacity:.86}
+ .mobile-call>b{font-size:17px;font-weight:500;letter-spacing:.3px;white-space:nowrap;margin-left:auto}
+ dialog{max-height:calc(100dvh - 115px);margin-block:auto}
+}
+@media(max-width:370px){.hero-actions{gap:12px}.hero-call{gap:17px;padding-inline:17px}.hero-call-copy strong{font-size:23px}.hero-explore{font-size:10px}.mobile-call{padding-inline:16px;gap:9px}.mobile-call>b{font-size:16px}}

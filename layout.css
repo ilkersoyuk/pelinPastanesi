@@ -1,0 +1,24 @@
+/* Sade açılış ve tek iletişim alanı. */
+.hero-actions{display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+.hero-explore{font-size:12px;display:flex;gap:14px;align-items:center;min-height:44px;border-bottom:1px solid var(--line)}
+.hero-explore:hover{color:var(--wine);border-color:var(--wine)}
+.hero-explore span{font-size:22px}
+.hero-opening{font-size:10px;color:var(--muted);margin-top:16px}
+.hero{grid-template-columns:1.08fr .92fr;gap:76px;align-items:center;padding-top:46px;padding-bottom:46px}
+.hero-copy{min-height:560px;padding-top:12px}
+.hero-visual{min-height:0;height:560px;width:100%;max-width:510px;justify-self:end}
+.hero-image{object-position:center 47%;border-radius:46% 46% 2px 2px}
+.hero-stamp{width:94px;height:94px;right:-10px;top:15px}
+.hero-stamp span{font-size:5.6px;letter-spacing:.8px}
+.hero-stamp b{font-size:36px}
+h1{font-size:clamp(76px,7vw,103px)}
+.instagram-strip{display:flex;align-items:center;justify-content:space-between;gap:24px;border-top:1px solid var(--line);padding-top:32px;padding-bottom:38px}
+.instagram-strip h3{font-size:35px;letter-spacing:-.6px;margin-top:8px}
+.instagram-strip .eyebrow{font-size:9px}
+.instagram-link{display:inline-flex;align-items:center;justify-content:space-between;gap:38px;padding:12px 19px;border:1px solid #a69887;min-height:48px;font-size:12px;transition:background .2s,color .2s}
+.instagram-link:hover{background:var(--wine);border-color:var(--wine);color:var(--paper)}
+.instagram-link span{font-size:22px}
+@media(min-width:1500px){.hero-copy{min-height:590px}.hero-visual{height:590px}.hero{gap:90px}}
+@media(max-width:1100px){.hero{gap:48px}.hero-copy{min-height:520px}.hero-visual{height:520px}h1{font-size:87px}.hero-actions{gap:18px}}
+@media(max-width:760px){body{padding-bottom:0}.hero{grid-template-columns:1fr;gap:29px;padding-top:30px;padding-bottom:32px}.hero-copy{min-height:0;padding-top:0}.hero-visual{height:430px;max-width:400px;justify-self:center;width:calc(100% - 12px);margin:4px 0 0}h1{font-size:clamp(73px,15vw,105px)}.hero-stamp{width:84px;height:84px;right:-6px;top:14px}.hero-stamp b{font-size:32px}.hero-stamp span{font-size:5px}.hero-actions{gap:24px}.hero-explore{font-size:11px;gap:10px}.instagram-strip{align-items:flex-start;flex-direction:column;gap:20px;padding-top:26px;padding-bottom:30px}.instagram-strip h3{font-size:31px}dialog{max-height:90dvh;margin-block:auto}}
+@media(max-width:370px){.hero-visual{height:360px}.hero-actions{gap:14px}.hero-explore{font-size:10px}.instagram-strip h3{font-size:28px}}

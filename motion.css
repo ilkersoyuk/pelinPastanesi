@@ -1,0 +1,51 @@
+/* Yavaş pasta figürleri, vitrin geçişleri ve kullanıcı kontrollü hareket. */
+@font-face{font-family:Editorial;src:url('assets/editorial-ext.woff2') format('woff2');font-style:normal;font-weight:300 700;font-display:swap;unicode-range:U+0100-02FF,U+1E00-1EFF,U+20A0-20AB}
+@font-face{font-family:Editorial;src:url('assets/editorial-italic-ext.woff2') format('woff2');font-style:italic;font-weight:300 700;font-display:swap;unicode-range:U+0100-02FF,U+1E00-1EFF,U+20A0-20AB}
+@font-face{font-family:Body;src:url('assets/body-ext.woff2') format('woff2');font-style:normal;font-weight:400 700;font-display:swap;unicode-range:U+0100-02FF,U+1E00-1EFF,U+20A0-20AB}
+.hero-description{max-width:350px}
+.hero-visual{overflow:visible}
+.pastry-figure{position:absolute;pointer-events:none;z-index:3;filter:drop-shadow(0 8px 6px #332c2514);animation:pastry-float 6s ease-in-out infinite;will-change:transform}
+.pastry-figure img{object-fit:contain;animation:pastry-turn 38s linear infinite;transform-origin:50% 50%}
+.pastry-slice{width:154px;height:154px;left:-65px;bottom:55px;animation-delay:-2s}
+.pastry-cupcake{width:117px;height:117px;right:-23px;top:40%;animation-duration:7.5s}
+.pastry-cupcake img{animation-direction:reverse;animation-duration:48s}
+.story-copy{position:relative}
+.pastry-whole{width:125px;height:125px;right:-15px;bottom:-42px;animation-delay:-4s}
+.pastry-whole img{animation-duration:55s}
+.hero-stamp{animation:stamp-sway 9s ease-in-out infinite}
+.tiny-flower{display:inline-block;animation:pastry-turn 22s linear infinite}
+.ribbon{display:block;padding-inline:0}
+.ribbon-track{display:flex;width:max-content;animation:ribbon-drift 38s linear infinite}
+.ribbon-group{display:flex;gap:45px;align-items:center;flex-shrink:0;padding-right:45px}
+.ribbon:hover .ribbon-track{animation-play-state:paused}
+.scroll-progress{position:fixed;inset:0 0 auto;height:3px;background:var(--wine);z-index:80;transform:scaleX(0);transform-origin:left;pointer-events:none}
+.visit-note-card{background:#eae4d6;border:1px solid #d5ccbd;padding:44px;position:relative;transform:rotate(2deg);transition:transform .4s}
+.visit-note-card:hover{transform:rotate(0)}
+.visit-note-card h3{font-size:64px;line-height:1.04;letter-spacing:-1.4px;margin:23px 0;color:var(--wine)}
+.visit-number{display:inline-block;font-size:25px;border-bottom:1px solid #b7a998;padding:10px 0;letter-spacing:.3px}
+.visit-hours{display:flex;justify-content:space-between;border-block:1px solid #cfc5b5;padding:17px 0;margin-top:30px;font-size:12px}
+.visit-hours strong{font-weight:500}
+.visit-note-card .text-link{margin-top:18px}
+#motion-toggle{border:0;background:transparent;color:inherit;display:inline-flex;align-items:center;gap:10px;font-size:10px;min-height:44px;padding:0 8px;margin:-12px 0}
+#motion-toggle:hover{color:white}
+#motion-toggle span{font-size:15px}
+.section-heading>p>a{border-bottom:1px solid #b1a18f}
+.dialog-content .text-link{margin-top:12px}
+.reveal-ready{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal-ready.is-visible{opacity:1;transform:none}
+.motion-paused .pastry-figure,.motion-paused .pastry-figure img,.motion-paused .hero-stamp,.motion-paused .tiny-flower,.motion-paused .ribbon-track{animation-play-state:paused!important}
+.motion-paused .reveal-ready{opacity:1;transform:none;transition:none}
+.motion-paused .visit-note-card{transform:none}
+.tab-inactive .pastry-figure,.tab-inactive .pastry-figure img,.tab-inactive .hero-stamp,.tab-inactive .tiny-flower,.tab-inactive .ribbon-track{animation-play-state:paused!important}
+@keyframes pastry-turn{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+@keyframes pastry-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-13px)}}
+@keyframes stamp-sway{0%,100%{transform:rotate(10deg)}50%{transform:rotate(19deg)}}
+@keyframes ribbon-drift{to{transform:translateX(-50%)}}
+@media(max-width:1100px){.pastry-slice{width:125px;height:125px;left:-38px}.pastry-cupcake{width:95px;height:95px;right:-12px}.pastry-whole{right:0;width:100px;height:100px}.visit-note-card{padding:32px}.visit-note-card h3{font-size:56px}.visit-number{font-size:22px}}
+@media(max-width:760px){.pastry-slice{width:115px;height:115px;left:-15px;bottom:30px}.pastry-cupcake{width:88px;height:88px;right:-10px;top:44%}.pastry-whole{right:8px;bottom:-20px;width:98px;height:98px}.story-copy{padding-bottom:25px}.visit-note-card{transform:rotate(1deg);margin:8px 4px 0;padding:32px 26px}.visit-note-card h3{font-size:56px}.ribbon-group{gap:28px;padding-right:28px}.footer-bottom{align-items:flex-start}#motion-toggle{padding-left:0;margin:-7px 0}.hero-description{max-width:340px}}
+/* Küçük figürler ana fotoğrafı ve metni gölgelememeli. */
+.pastry-figure.pastry-slice{width:86px;height:86px;left:-29px;bottom:38px}
+.pastry-figure.pastry-cupcake{width:68px;height:68px;right:-12px;top:44%}
+.pastry-figure.pastry-whole{width:82px;height:82px;right:7px;bottom:-25px}
+@media(max-width:760px){.pastry-figure.pastry-slice{width:73px;height:73px;left:-9px;bottom:26px}.pastry-figure.pastry-cupcake{width:60px;height:60px;right:-8px}.pastry-figure.pastry-whole{width:70px;height:70px;right:12px}}
+@media(prefers-reduced-motion:reduce){.pastry-figure,.pastry-figure img,.hero-stamp,.tiny-flower,.ribbon-track{animation:none!important;will-change:auto}.reveal-ready{opacity:1;transform:none;transition:none}.visit-note-card{transform:none}.ribbon-track{transform:none}.scroll-progress{transition:none}}
